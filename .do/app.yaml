@@ -4,6 +4,7 @@ services:
     github:
       branch: main
       deploy_on_push: true
+      repo: jones-agyemang/livewell-ui
     http_port: 8080
     routes:
       - path: /
