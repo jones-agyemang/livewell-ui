@@ -3,6 +3,17 @@
 import { test, expect } from '@playwright/test';
 
 test('submits the resident form successfully', async ({ page }) => {
+  // Intercept and mock the POST request
+  await page.route('http://localhost:4000/api/v1/residents', (route) => {
+    route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({
+        message: 'Resident details saved successfully.',
+      }),
+    });
+  });
+  
   // Navigate to the application
   await page.goto('http://localhost:3000/');
 
