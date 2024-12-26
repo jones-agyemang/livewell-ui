@@ -1,0 +1,13 @@
+services:
+  - name: react-app
+    github:
+      branch: main
+      deploy_on_push: true
+    http_port: 8080
+    routes:
+      - path: /
+    build_command: npm run build
+    run_command: npm start
+    envs:
+      - key: NODE_ENV
+        value: production
