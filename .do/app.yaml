@@ -1,5 +1,6 @@
+name: livewell-ui
 services:
-  - name: react-app
+  - name: livewell-ui
     github:
       branch: main
       deploy_on_push: true
