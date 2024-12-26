@@ -35,4 +35,4 @@ jobs:
       uses: digitalocean/app_action/deploy@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} # Replace with your secret variable
-        spec: .do/app.yaml
+        app_spec_location: .do/app.yaml
